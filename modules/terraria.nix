@@ -53,7 +53,7 @@ in {
         qt6.qt5compat
         qt6.qtsvg
         qt6.qtmultimedia
-        qt6.qtmultimedia-ffmpeg
+        ffmpeg
       ];
     };
   };
