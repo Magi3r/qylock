@@ -57,4 +57,4 @@ in {
       ];
     };
   };
-}sddm-greeter-qt6 --test-mode --theme result/share/sddm/themes/terraria/
+}
