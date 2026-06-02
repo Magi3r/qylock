@@ -42,13 +42,15 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      (pkgs.callPackage ../pkgs/terraria {inherit themeConf;})
+    ];
     services.displayManager.sddm = {
       theme = "terraria";
       # package = pkgs.callPackage ../pkgs/terraria {
       #   inherit themeConf;
       # };
       extraPackages = with pkgs; [
-        (pkgs.callPackage ../pkgs/terraria {inherit themeConf;})
         qt6.qtdeclarative
         qt6.qt5compat
         qt6.qtsvg
