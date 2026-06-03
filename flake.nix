@@ -27,16 +27,22 @@
 
     # Optional: dev shell
     devShells.x86_64-linux.default = pkgs.mkShell {
+
       packages = with pkgs; [
         kdePackages.sddm
         qt6.qtdeclarative
         qt6.qt5compat
         qt6.qtsvg
         qt6.qtmultimedia
+
+        pipewire
+        ffmpeg
       ];
 
       shellHook = ''
-        export QML2_IMPORT_PATH="${pkgs.qt6.qt5compat}/lib/qt-6/qml:${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:$QML2_IMPORT_PATH"
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath [pkgs.pipewire]}"
+        export QT_PLUGIN_PATH="${pkgs.qt6.qtmultimedia}/lib/qt-6/plugins:$QT_PLUGIN_PATH"
+        export QML2_IMPORT_PATH="${pkgs.qt6.qt5compat}/lib/qt-6/qml:${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:${pkgs.qt6.qtsvg}/lib/qt-6/qml:${pkgs.qt6.qtmultimedia}/lib/qt-6/qml:$QML2_IMPORT_PATH"
         export QML_IMPORT_PATH="$QML2_IMPORT_PATH"
 
         echo "qylock dev shell (clean)"
