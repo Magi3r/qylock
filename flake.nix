@@ -20,14 +20,19 @@
     };
 
     # 🧩 NixOS module
-    nixosModules.default = import [
-      ./modules/terraria.nix
-      ./modules/genshin.nix
-    ];
+    nixosModules = {
+      terraria = import ./modules/terraria.nix;
+      genshin = import ./modules/genshin.nix;
 
+      default = {
+        imports = [
+          ./modules/terraria.nix
+          ./modules/genshin.nix
+        ];
+      };
+    };
     # Optional: dev shell
     devShells.x86_64-linux.default = pkgs.mkShell {
-
       packages = with pkgs; [
         kdePackages.sddm
         qt6.qtdeclarative
