@@ -101,7 +101,7 @@ Rectangle {
         color: "transparent"
         visible: root.ui > 0
 
-        // Edge Lines
+        // Borders
         Rectangle {
             width: 2 * s
             anchors.top: parent.top
@@ -140,6 +140,207 @@ Rectangle {
         gradient: Gradient {
             GradientStop { position: 0.0; color: "transparent" }
             GradientStop { position: 1.0; color: "#f4050d14" }
+        }
+    }
+
+    // Error
+    Text {
+        id: errText
+        text: ""
+        anchors.horizontalCenter: loginPanel.horizontalCenter
+        anchors.bottom: loginPanel.top
+        anchors.bottomMargin: 6 * s
+        color: "#ff4766"
+        font.family: pf.name
+        font.pixelSize: 10 * s
+        font.bold: true
+        opacity: text.length > 0 ? 1 : 0
+    }
+
+    // Login
+    Row {
+        id: loginPanel
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 6 * s
+        height: 28 * s
+        spacing: 8 * s
+        opacity: root.ui
+
+        // User
+        Item {
+            width: 140 * s
+            height: 28 * s
+
+            // Background
+            Rectangle {
+                anchors.fill: parent
+                color: root.metalDark
+                opacity: 0.85
+                border.color: userMouse.containsMouse ? root.cyanWire : root.electricBlue
+                border.width: 1 * s
+                Behavior on border.color { ColorAnimation { duration: 120 } }
+            }
+
+            Text {
+                id: userLabelText
+                text: "USER //"
+                color: root.electricBlue
+                font.family: pf.name
+                font.pixelSize: 11 * s
+                font.bold: true
+                font.letterSpacing: 1 * s
+                anchors.left: parent.left
+                anchors.leftMargin: 12 * s
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            Text {
+                text: ((userHelper.currentItem && userHelper.currentItem.uName) ? userHelper.currentItem.uName : (userModel.lastUser || "User")).toUpperCase()
+                color: userMouse.containsMouse ? root.cyanWire : root.cleanWhite
+                font.family: pf.name
+                font.pixelSize: 11 * s
+                font.bold: true
+                font.letterSpacing: 1 * s
+                anchors.left: userLabelText.right
+                anchors.leftMargin: 6 * s
+                anchors.right: parent.right
+                anchors.rightMargin: 12 * s
+                anchors.verticalCenter: parent.verticalCenter
+                elide: Text.ElideRight
+                Behavior on color { ColorAnimation { duration: 120 } }
+            }
+
+            MouseArea {
+                id: userMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: {
+                    if (typeof userModel !== "undefined" && userModel.rowCount() > 0)
+                        root.userIndex = (root.userIndex + 1) % userModel.rowCount()
+                }
+            }
+        }
+
+        // Password
+        Item {
+            width: 180 * s
+            height: 28 * s
+
+            // Background
+            Rectangle {
+                anchors.fill: parent
+                color: root.metalDark
+                opacity: 0.85
+                border.color: pwd.focus ? root.cyanWire : root.electricBlue
+                border.width: 1 * s
+                Behavior on border.color { ColorAnimation { duration: 150 } }
+            }
+
+            TextInput {
+                id: pwd
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 10 * s
+                anchors.rightMargin: 10 * s
+                color: root.cyanWire
+                font.family: pf.name
+                font.pixelSize: 12 * s
+                font.letterSpacing: 3 * s
+                echoMode: TextInput.Password
+                passwordCharacter: "■"
+                onTextEdited: errText.text = ""
+                focus: true
+                clip: true
+                verticalAlignment: TextInput.AlignVCenter
+                cursorVisible: false
+                cursorDelegate: Item { width: 0; height: 0 }
+                selectionColor: root.cyanWire
+
+                property bool wasClicked: false
+                onActiveFocusChanged: if (!activeFocus && text.length === 0) wasClicked = false
+
+                Keys.onReturnPressed: doLogin()
+                Keys.onEnterPressed: doLogin()
+            }
+
+            Text {
+                anchors.left: parent.left
+                anchors.leftMargin: 10 * s
+                anchors.verticalCenter: parent.verticalCenter
+                text: "PASSWORD"
+                color: root.cleanWhite
+                font.family: pf.name
+                font.pixelSize: 9 * s
+                font.letterSpacing: 1 * s
+                opacity: pwd.text.length === 0 ? 0.5 : 0
+                Behavior on opacity { NumberAnimation { duration: 150 } }
+            }
+
+            // Cursor
+            Rectangle {
+                id: customCursor
+                width: 8 * s
+                height: pwd.cursorRectangle.height
+                color: root.cyanWire
+                y: pwd.y + pwd.cursorRectangle.y
+                x: pwd.x + pwd.cursorRectangle.x
+                visible: pwd.focus && (pwd.text.length > 0 || pwd.wasClicked)
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: customCursor.visible
+                    NumberAnimation { target: customCursor; property: "opacity"; from: 1; to: 0.1; duration: 400 }
+                    NumberAnimation { target: customCursor; property: "opacity"; from: 0.1; to: 1; duration: 400 }
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    pwd.forceActiveFocus()
+                    pwd.wasClicked = true
+                }
+            }
+        }
+
+        // Button
+        Item {
+            width: 80 * s
+            height: 28 * s
+
+            // Background
+            Rectangle {
+                anchors.fill: parent
+                color: root.metalDark
+                opacity: loginMouse.containsMouse ? 0.95 : 0.85
+                border.color: loginMouse.containsMouse ? root.cyanWire : root.electricBlue
+                border.width: 1 * s
+                Behavior on opacity { NumberAnimation { duration: 120 } }
+                Behavior on border.color { ColorAnimation { duration: 120 } }
+            }
+
+            Text {
+                id: btnText
+                anchors.centerIn: parent
+                text: "➔ LOGIN"
+                color: loginMouse.containsMouse ? root.cyanWire : root.cleanWhite
+                font.family: pf.name
+                font.pixelSize: 9 * s
+                font.letterSpacing: 1 * s
+                font.bold: true
+                Behavior on color { ColorAnimation { duration: 120 } }
+            }
+
+            MouseArea {
+                id: loginMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: doLogin()
+            }
         }
     }
 
@@ -247,7 +448,7 @@ Rectangle {
                     width: pmt.implicitWidth + 30 * s
                     height: 28 * s
 
-                    // Glass Panel
+                    // Panel
                     Rectangle {
                         anchors.fill: parent
                         color: root.darkTeal
@@ -285,171 +486,6 @@ Rectangle {
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-
-    Item {
-        id: loginPanel
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.margins: 40 * s
-        width: 320 * s
-        height: 140 * s
-        opacity: root.ui
-
-        Column {
-            id: mainLoginCol
-            anchors.fill: parent
-            spacing: 12 * s
-
-            // Username
-            Row {
-                anchors.right: parent.right
-                spacing: 8 * s
-
-                Text {
-                    text: "USER //"
-                    color: root.electricBlue
-                    font.family: pf.name
-                    font.pixelSize: 12 * s
-                    font.bold: true
-                    font.letterSpacing: 1.5 * s
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-
-                Text {
-                    text: ((userHelper.currentItem && userHelper.currentItem.uName) ? userHelper.currentItem.uName : (userModel.lastUser || "User")).toUpperCase()
-                    color: userMouse.containsMouse ? root.cyanWire : root.cleanWhite
-                    font.family: pf.name
-                    font.pixelSize: 20 * s
-                    font.bold: true
-                    font.letterSpacing: 2 * s
-                    anchors.verticalCenter: parent.verticalCenter
-
-                    MouseArea {
-                        id: userMouse
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        cursorShape: Qt.PointingHandCursor
-                        onClicked: {
-                            if (typeof userModel !== "undefined" && userModel.rowCount() > 0)
-                                root.userIndex = (root.userIndex + 1) % userModel.rowCount()
-                        }
-                    }
-
-                    Behavior on color { ColorAnimation { duration: 120 } }
-                }
-            }
-
-            // Password
-            Item {
-                width: parent.width
-                height: 32 * s
-                anchors.right: parent.right
-
-                TextInput {
-                    id: pwd
-                    anchors.fill: parent
-                    color: root.cyanWire
-                    font.family: pf.name
-                    font.pixelSize: 18 * s
-                    font.letterSpacing: 4 * s
-                    echoMode: TextInput.Password
-                    passwordCharacter: "■"
-                    onTextEdited: errText.text = ""
-                    focus: true
-                    clip: true
-                    horizontalAlignment: TextInput.AlignRight
-                    verticalAlignment: TextInput.AlignVCenter
-                    cursorVisible: false
-                    cursorDelegate: Item { width: 0; height: 0 }
-                    selectionColor: root.cyanWire
-
-                    property bool wasClicked: false
-                    onActiveFocusChanged: if (!activeFocus && text.length === 0) wasClicked = false
-
-                    Keys.onReturnPressed: doLogin()
-                    Keys.onEnterPressed: doLogin()
-                }
-
-                Text {
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: "PASSWORD"
-                    color: root.cleanWhite
-                    font.family: pf.name
-                    font.pixelSize: 13 * s
-                    font.letterSpacing: 2 * s
-                    opacity: pwd.text.length === 0 ? 0.8 : 0
-                    Behavior on opacity { NumberAnimation { duration: 150 } }
-                }
-
-                // Cursor
-                Rectangle {
-                    id: customCursor
-                    width: 2 * s
-                    height: 14 * s
-                    color: root.cyanWire
-                    anchors.verticalCenter: parent.verticalCenter
-                    x: pwd.cursorRectangle.x
-                    visible: pwd.focus && (pwd.text.length > 0 || pwd.wasClicked)
-
-                    SequentialAnimation {
-                        loops: Animation.Infinite
-                        running: customCursor.visible
-                        NumberAnimation { target: customCursor; property: "opacity"; from: 1; to: 0.1; duration: 400 }
-                        NumberAnimation { target: customCursor; property: "opacity"; from: 0.1; to: 1; duration: 400 }
-                    }
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        pwd.forceActiveFocus()
-                        pwd.wasClicked = true
-                    }
-                }
-            }
-
-            // Action Bar
-            Item {
-                width: parent.width
-                height: 24 * s
-                anchors.right: parent.right
-
-                Text {
-                    id: errText
-                    text: ""
-                    anchors.left: parent.left
-                    anchors.verticalCenter: parent.verticalCenter
-                    color: "#ff4766"
-                    font.family: pf.name
-                    font.pixelSize: 10 * s
-                    font.bold: true
-                }
-
-                Text {
-                    id: btnText
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: "➔ LOGIN"
-                    color: loginMouse.containsMouse ? root.cyanWire : root.electricBlue
-                    font.family: pf.name
-                    font.pixelSize: 12 * s
-                    font.letterSpacing: 1.5 * s
-                    font.bold: true
-
-                    Behavior on color { ColorAnimation { duration: 120 } }
-                }
-
-                MouseArea {
-                    id: loginMouse
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: doLogin()
                 }
             }
         }

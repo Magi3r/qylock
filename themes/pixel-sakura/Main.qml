@@ -12,6 +12,7 @@ Rectangle {
     property int userIndex: (typeof userModel !== "undefined" && userModel.lastIndex >= 0) ? userModel.lastIndex : 0
     property real ui: 0
     property bool sessionMenuOpen: false
+
     // Colors
     readonly property color sakuraPink: "#df7a8c"
     readonly property color slateDark: "#32354c"
@@ -22,18 +23,18 @@ Rectangle {
         var u = (userHelper.currentItem && userHelper.currentItem.uLogin) ? userHelper.currentItem.uLogin : (typeof userModel !== "undefined" ? userModel.lastUser : "");
         if (typeof sddm !== "undefined")
             sddm.login(u, pwdInput.text, root.sessionIndex);
-
     }
 
     width: Screen.width
     height: Screen.height
     color: "#ebf0f5"
+
     Component.onCompleted: {
         entryAnim.start();
         keyboard.numLock = true;
     }
 
-    // Cursor
+    // Cursor Fix
     MouseArea {
         anchors.fill: parent
         cursorShape: Qt.ArrowCursor
@@ -42,39 +43,32 @@ Rectangle {
 
     FontLoader {
         id: pf
-
         source: "font/PixelifySans-Bold.ttf"
     }
 
     ListView {
         id: sessionHelper
-
         model: typeof sessionModel !== "undefined" ? sessionModel : null
         currentIndex: root.sessionIndex
         visible: false
         width: 100
         height: 100
-
         delegate: Item {
             property string sName: model.name || ""
         }
-
     }
 
     ListView {
         id: userHelper
-
         model: typeof userModel !== "undefined" ? userModel : null
         currentIndex: root.userIndex
         visible: false
         width: 100
         height: 100
-
         delegate: Item {
             property string uName: model.realName || model.name || ""
             property string uLogin: model.name || ""
         }
-
     }
 
     Timer {
@@ -83,9 +77,9 @@ Rectangle {
         onTriggered: pwdInput.forceActiveFocus()
     }
 
+    // Anim
     NumberAnimation {
         id: entryAnim
-
         target: root
         property: "ui"
         from: 0
@@ -94,7 +88,7 @@ Rectangle {
         easing.type: Easing.OutCubic
     }
 
-    // Fallback
+    // Background
     Rectangle {
         anchors.fill: parent
         color: "#ebf0f5"
@@ -109,7 +103,6 @@ Rectangle {
     // Clock
     Item {
         id: clockZone
-
         width: 300 * s
         height: 120 * s
         anchors.left: parent.left
@@ -120,7 +113,6 @@ Rectangle {
 
         Text {
             id: clockText
-
             text: Qt.formatTime(new Date(), "HH:mm")
             color: root.slateDark
             font.family: pf.name
@@ -135,12 +127,10 @@ Rectangle {
                 repeat: true
                 onTriggered: clockText.text = Qt.formatTime(new Date(), "HH:mm")
             }
-
         }
 
         Text {
             id: dateText
-
             text: Qt.formatDate(new Date(), "dddd, MMMM d").toUpperCase()
             color: root.sakuraPink
             font.family: pf.name
@@ -152,44 +142,53 @@ Rectangle {
             anchors.topMargin: -4 * s
         }
 
-        // Divider
-        Row {
+        // Track
+        Item {
+            width: 120 * s
+            height: 8 * s
             anchors.top: dateText.bottom
             anchors.topMargin: 12 * s
             anchors.left: parent.left
-            spacing: 4 * s
 
-            Repeater {
-                model: 10
-
-                Rectangle {
-                    width: 6 * s
-                    height: 1.5 * s
-                    color: root.slateMid
-                    opacity: 0.35
-                }
-
+            Rectangle {
+                width: parent.width
+                height: 1.5 * s
+                color: root.slateMid
+                opacity: 0.25
+                anchors.verticalCenter: parent.verticalCenter
             }
 
-        }
+            Row {
+                anchors.fill: parent
+                spacing: 10 * s
 
+                Repeater {
+                    model: 11
+                    Rectangle {
+                        width: 2 * s
+                        height: 6 * s
+                        color: root.slateMid
+                        opacity: 0.35
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
+            }
+        }
     }
 
     // Login
     Item {
         id: loginZone
-
-        width: 320 * s
+        width: 240 * s
         height: 120 * s
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: 60 * s // Offset
+        anchors.verticalCenterOffset: 60 * s
         opacity: root.ui
 
         // Username
         Item {
             id: userPill
-
             width: parent.width
             height: 28 * s
             anchors.top: parent.top
@@ -208,114 +207,54 @@ Rectangle {
                     ColorAnimation {
                         duration: 150
                     }
-
                 }
-
             }
 
             MouseArea {
                 id: userMouse
-
                 anchors.fill: parent
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
                     if (typeof userModel !== "undefined" && userModel.rowCount() > 1)
                         root.userIndex = (root.userIndex + 1) % userModel.rowCount();
-
                 }
             }
-
         }
 
         // Password
         Item {
             id: pwdContainer
-
-            width: 240 * s
-            height: 34 * s
+            width: 180 * s
+            height: 30 * s
             anchors.top: userPill.bottom
             anchors.topMargin: 8 * s
             anchors.horizontalCenter: parent.horizontalCenter
 
-            // Border
+            // Underline
             Rectangle {
-                anchors.fill: parent
-                color: Qt.rgba(255, 255, 255, 0.45)
-                border.color: pwdInput.activeFocus ? root.sakuraPink : root.slateMid
-                border.width: 1.5 * s
-
-                // Corners
-                Rectangle {
-                    width: 3 * s
-                    height: 3 * s
-                    color: root.sakuraPink
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    visible: pwdInput.activeFocus
-                }
-
-                Rectangle {
-                    width: 3 * s
-                    height: 3 * s
-                    color: root.sakuraPink
-                    anchors.top: parent.top
-                    anchors.right: parent.right
-                    visible: pwdInput.activeFocus
-                }
-
-                Rectangle {
-                    width: 3 * s
-                    height: 3 * s
-                    color: root.sakuraPink
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    visible: pwdInput.activeFocus
-                }
-
-                Rectangle {
-                    width: 3 * s
-                    height: 3 * s
-                    color: root.sakuraPink
-                    anchors.bottom: parent.bottom
-                    anchors.right: parent.right
-                    visible: pwdInput.activeFocus
-                }
-
-            }
-
-            Text {
-                anchors.centerIn: parent
-                text: "PASSWORD"
-                color: root.slateMid
-                font.family: pf.name
-                font.pixelSize: 11 * s
-                font.letterSpacing: 2 * s
-                opacity: pwdInput.text.length === 0 ? 0.7 : 0
-
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: 200
-                    }
-
-                }
-
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                height: 1 * s
+                color: pwdInput.activeFocus ? root.sakuraPink : root.slateMid
+                opacity: pwdInput.activeFocus ? 0.8 : 0.35
+                Behavior on color { ColorAnimation { duration: 150 } }
+                Behavior on opacity { NumberAnimation { duration: 150 } }
             }
 
             TextInput {
                 id: pwdInput
-
                 property bool wasClicked: false
-
-                anchors.fill: parent
-                anchors.leftMargin: 14 * s
-                anchors.rightMargin: 14 * s
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
                 horizontalAlignment: TextInput.AlignHCenter
                 verticalAlignment: TextInput.AlignVCenter
                 color: root.slateDark
                 font.family: pf.name
-                font.pixelSize: 16 * s
-                font.letterSpacing: 3 * s
+                font.pixelSize: 15 * s
+                font.letterSpacing: 4 * s
                 echoMode: TextInput.Password
                 passwordCharacter: "■"
                 onTextEdited: errText.text = ""
@@ -338,15 +277,46 @@ Rectangle {
                     width: 0
                     height: 0
                 }
-
             }
 
+            Text {
+                anchors.centerIn: parent
+                text: "PASSWORD"
+                color: root.slateMid
+                font.family: pf.name
+                font.pixelSize: 10 * s
+                font.letterSpacing: 2 * s
+                opacity: pwdInput.text.length === 0 ? 0.6 : 0
+
+                Behavior on opacity {
+                    NumberAnimation {
+                        duration: 150
+                    }
+                }
+            }
+
+            // Cursor
+            Rectangle {
+                id: customCursor
+                width: 6 * s
+                height: pwdInput.cursorRectangle.height
+                color: root.sakuraPink
+                y: pwdInput.y + pwdInput.cursorRectangle.y
+                x: pwdInput.x + pwdInput.cursorRectangle.x
+                visible: pwdInput.focus && (pwdInput.text.length > 0 || pwdInput.wasClicked)
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: customCursor.visible
+                    NumberAnimation { target: customCursor; property: "opacity"; from: 1; to: 0.1; duration: 400 }
+                    NumberAnimation { target: customCursor; property: "opacity"; from: 0.1; to: 1; duration: 400 }
+                }
+            }
         }
 
         // Error
         Text {
             id: errText
-
             text: ""
             color: root.sunRed
             font.family: pf.name
@@ -361,7 +331,6 @@ Rectangle {
         // Actions
         Row {
             id: actionZone
-
             anchors.top: pwdContainer.bottom
             anchors.topMargin: 25 * s
             anchors.horizontalCenter: parent.horizontalCenter
@@ -376,9 +345,8 @@ Rectangle {
                     spacing: 5 * s
                     anchors.centerIn: parent
 
-                    // Icon
                     Text {
-                        text: "❖"
+                        text: "✦"
                         font.pixelSize: 8 * s
                         color: sessMouse.containsMouse ? root.sakuraPink : root.slateMid
                         anchors.verticalCenter: parent.verticalCenter
@@ -386,7 +354,6 @@ Rectangle {
 
                     Text {
                         id: sessText
-
                         text: (sessionHelper.currentItem && sessionHelper.currentItem.sName ? sessionHelper.currentItem.sName : "SESSION").toUpperCase()
                         color: sessMouse.containsMouse ? root.sakuraPink : root.slateMid
                         font.family: pf.name
@@ -399,16 +366,12 @@ Rectangle {
                             ColorAnimation {
                                 duration: 150
                             }
-
                         }
-
                     }
-
                 }
 
                 MouseArea {
                     id: sessMouse
-
                     anchors.fill: parent
                     hoverEnabled: true
                     cursorShape: Qt.PointingHandCursor
@@ -420,7 +383,7 @@ Rectangle {
                 }
             }
 
-            // Power
+            // Repeater
             Repeater {
                 model: [{
                     "label": "RESTART",
@@ -431,30 +394,39 @@ Rectangle {
                 }]
 
                 delegate: Item {
-                    width: modelData.label === "SHUT DOWN" ? 96 * s : 78 * s
+                    width: modelData.label === "SHUT DOWN" ? 104 * s : 86 * s
                     height: 24 * s
 
-                    Text {
-                        text: modelData.label
-                        color: powerMouse.containsMouse ? root.sakuraPink : root.slateMid
-                        font.family: pf.name
-                        font.pixelSize: 11 * s
-                        font.bold: true
-                        font.letterSpacing: 1.5 * s
+                    Row {
+                        spacing: 5 * s
                         anchors.centerIn: parent
 
-                        Behavior on color {
-                            ColorAnimation {
-                                duration: 150
-                            }
-
+                        Text {
+                            text: "✦"
+                            font.pixelSize: 8 * s
+                            color: powerMouse.containsMouse ? root.sakuraPink : root.slateMid
+                            anchors.verticalCenter: parent.verticalCenter
                         }
 
+                        Text {
+                            text: modelData.label
+                            color: powerMouse.containsMouse ? root.sakuraPink : root.slateMid
+                            font.family: pf.name
+                            font.pixelSize: 11 * s
+                            font.bold: true
+                            font.letterSpacing: 1.5 * s
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            Behavior on color {
+                                ColorAnimation {
+                                    duration: 150
+                                }
+                            }
+                        }
                     }
 
                     MouseArea {
                         id: powerMouse
-
                         anchors.fill: parent
                         hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
@@ -462,27 +434,20 @@ Rectangle {
                             if (modelData.action === 0) {
                                 if (typeof sddm !== "undefined")
                                     sddm.reboot();
-
                             } else {
                                 if (typeof sddm !== "undefined")
                                     sddm.powerOff();
-
                             }
                         }
                     }
-
                 }
-
             }
-
         }
 
         transform: Translate {
             id: shakeTranslate
-
             x: 0
         }
-
     }
 
     // Shake
@@ -523,7 +488,6 @@ Rectangle {
             to: 0
             duration: 50
         }
-
     }
 
     Connections {
@@ -536,5 +500,4 @@ Rectangle {
 
         target: typeof sddm !== "undefined" ? sddm : null
     }
-
 }

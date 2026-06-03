@@ -188,177 +188,202 @@ If you encounter library errors at the login screen:
 
 <a id="gallery"></a>
 <br>
-
 <p align="center">
-  <img src="https://img.shields.io/badge/-GALLERY-9ece6a?style=for-the-badge&labelColor=1a1b26&logo=unsplash&logoColor=white" height="60" />
+<img src="https://img.shields.io/badge/-GALLERY-9ece6a?style=for-the-badge&labelColor=1a1b26&logo=unsplash&logoColor=white" height="60" />
 </p>
-
 <br>
-
 <div align="center">
-  <table style="border-collapse: collapse; border: none;">
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Coffee</b><br><br>
-        <img src="./Assets/pixel_coffee.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Dusk City</b><br><br>
-        <img src="./Assets/pixel_dusk_city.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Hollow Knight</b><br><br>
-        <img src="./Assets/pixel_hollowknight.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Munchlax</b><br><br>
-        <img src="./Assets/pixel_munchlax.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Night City</b><br><br>
-        <img src="./Assets/pixel_night_city.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Rainy Room</b><br><br>
-        <img src="./Assets/pixel_rainyroom.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Pixel · Skyscrapers</b><br><br>
-        <img src="./Assets/pixel_skyscrapers.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: so loud..15px; border: none;">
-        <b>Enfield</b><br><br>
-        <img src="./Assets/enfield.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Sword</b><br><br>
-        <img src="./Assets/sword.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Forest</b><br><br>
-        <img src="./Assets/forest.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Winter</b><br><br>
-        <img src="./Assets/winter.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Dog Samurai</b><br><br>
-        <img src="./Assets/dog_samurai.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>The Last of Us</b><br><br>
-        <img src="./Assets/the_last_of_us.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Field</b><br><br>
-        <img src="./Assets/field.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Girl · Coffee</b><br><br>
-        <img src="./Assets/girl_coffee.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Girl · Pillow</b><br><br>
-        <img src="./Assets/girl_pillow.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Man · Bicycle</b><br><br>
-        <img src="./Assets/man_bicycle.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Women · Umbrella</b><br><br>
-        <img src="./Assets/women_umbrella.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Honkai: Star Rail</b><br><br>
-        <img src="./Assets/star_rail.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Genshin Impact</b><br><br>
-        <img src="./Assets/genshin.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Wuthering Waves</b><br><br>
-        <img src="./Assets/wuwa.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>osu!</b><br><br>
-        <img src="./Assets/osu.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>osu! mania</b><br><br>
-        <img src="./Assets/osumania.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Minecraft</b><br><br>
-        <img src="./Assets/minecraft.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>NieR: Automata</b><br><br>
-        <img src="./Assets/nier_automata.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>      
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Reverse: 1999 - I</b><br><br>
-        <img src="./Assets/R1999_1.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Reverse: 1999 - II</b><br><br>
-        <img src="./Assets/R1999_2.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Clockwork</b><br><br>
-        <img src="./Assets/clockwork.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Terraria</b><br><br>
-        <img src="./Assets/terraria.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Ninja Gaiden</b><br><br>
-        <img src="./Assets/ninja_gaiden.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-        <b>Windows 7</b><br><br>
-        <img src="./Assets/win7.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
-      </td>
-      <td align="center" width="50%" style="padding: 15px; border: none;">
-      </td>
-    </tr>
-  </table>
-  </table>
+<table style="border-collapse: collapse; border: none;">
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Coffee</b><br><br>
+<img src="./Assets/pixel_coffee.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Dusk City</b><br><br>
+<img src="./Assets/pixel_dusk_city.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Hollow Knight</b><br><br>
+<img src="./Assets/pixel_hollowknight.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Munchlax</b><br><br>
+<img src="./Assets/pixel_munchlax.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Night City</b><br><br>
+<img src="./Assets/pixel_night_city.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Rainy Room</b><br><br>
+<img src="./Assets/pixel_rainyroom.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Skyscrapers</b><br><br>
+<img src="./Assets/pixel_skyscrapers.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Cyberpunk</b><br><br>
+<img src="./Assets/pixel-cyberpunk.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Emerald</b><br><br>
+<img src="./Assets/pixel-emerald.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Sakura</b><br><br>
+<img src="./Assets/pixel-sakura.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Pixel · Waterfall</b><br><br>
+<img src="./Assets/pixel-waterfall.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Enfield</b><br><br>
+<img src="./Assets/enfield.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Sword</b><br><br>
+<img src="./Assets/sword.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Forest</b><br><br>
+<img src="./Assets/forest.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Winter</b><br><br>
+<img src="./Assets/winter.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Dog Samurai</b><br><br>
+<img src="./Assets/dog_samurai.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>The Last of Us</b><br><br>
+<img src="./Assets/the_last_of_us.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Field</b><br><br>
+<img src="./Assets/field.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Girl · Coffee</b><br><br>
+<img src="./Assets/girl_coffee.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Girl · Pillow</b><br><br>
+<img src="./Assets/girl_pillow.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Man · Bicycle</b><br><br>
+<img src="./Assets/man_bicycle.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Women · Umbrella</b><br><br>
+<img src="./Assets/women_umbrella.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Nothing</b><br><br>
+<img src="./Assets/nothing.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Material You</b><br><br>
+<img src="./Assets/material-you.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Honkai: Star Rail</b><br><br>
+<img src="./Assets/star_rail.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Genshin Impact</b><br><br>
+<img src="./Assets/genshin.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Wuthering Waves</b><br><br>
+<img src="./Assets/wuwa.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>osu!</b><br><br>
+<img src="./Assets/osu.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>osu! mania</b><br><br>
+<img src="./Assets/osumania.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Minecraft</b><br><br>
+<img src="./Assets/minecraft.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>NieR: Automata</b><br><br>
+<img src="./Assets/nier_automata.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Reverse: 1999 - I</b><br><br>
+<img src="./Assets/R1999_1.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Reverse: 1999 - II</b><br><br>
+<img src="./Assets/R1999_2.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Clockwork</b><br><br>
+<img src="./Assets/clockwork.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Terraria</b><br><br>
+<img src="./Assets/terraria.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Ninja Gaiden</b><br><br>
+<img src="./Assets/ninja_gaiden.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+<b>Windows 7</b><br><br>
+<img src="./Assets/win7.gif" width="100%" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"/>
+</td>
+<td align="center" width="50%" style="padding: 15px; border: none;">
+</td>
+</tr>
+</table>
 </div>
-
 
 <br>
 
@@ -380,7 +405,9 @@ Huge thanks to all the amazing artists for these wallpapers and fonts! Here's wh
 | **Pixel · Coffee** | [MoeWalls](https://moewalls.com/pixel-art/cyberpunk-coffee-pixel-live-wallpaper/) | Pixelify Sans | **Pixel · Munchlax** | [MoeWalls](https://moewalls.com/pixel-art/munchlax-sleeping-on-the-field-pixel-live-wallpaper/) | Pixelify Sans |
 | **Pixel · Dusk City** | [WallsFlow](https://wallsflow.com/live-wallpapers/pixel-art/505-pixel-dusk-city-retro-anime-streets-live-wallpaper.html) | Pixelify Sans | **Pixel · Night City** | [WallsFlow](https://wallsflow.com/live-wallpapers/pixel-art/400-night-city-pixel-art-cyberpunk-live-wallpaper.html) | Pixelify Sans |
 | **Pixel · Hollow Knight** | [MoeWalls](https://moewalls.com/pixel-art/hollow-knight-3-live-wallpaper/) | Pixelify Sans | **Pixel · Rainy Room** | [MoeWalls](https://moewalls.com/pixel-art/pixel-room-rainy-night-live-wallpaper/) | Pixelify Sans |
-| **Pixel · Skyscrapers** | [WallsFlow](https://wallsflow.com/live-wallpapers/pixel-art/61-pixel-city.html) | Pixelify Sans | **Enfield** | [WallsFlow](https://wallsflow.com/live-wallpapers/games/777-arknights-endfield-sakura-sanctuary-live-wallpaper.html) | Orbitron |
+| **Pixel · Skyscrapers** | [WallsFlow](https://wallsflow.com/live-wallpapers/pixel-art/61-pixel-city.html) | Pixelify Sans | **Pixel · Cyberpunk** | - | Pixelify Sans |
+| **Pixel · Emerald** | - | Pixelify Sans | **Pixel · Sakura** | - | Pixelify Sans |
+| **Pixel · Waterfall** | - | Pixelify Sans | **Enfield** | [WallsFlow](https://wallsflow.com/live-wallpapers/games/777-arknights-endfield-sakura-sanctuary-live-wallpaper.html) | Orbitron |
 | **Sword** | [WallsFlow](https://wallsflow.com/live-wallpapers/anime/761-silent-katana-forest-samurai-live-wallpaper.html) | The Last Shuriken | **The Last of Us** | [MoeWalls](https://moewalls.com/games/the-last-of-us-sunset-live-wallpaper/) | Outfit |
 | **Field** | [MoeWalls](https://moewalls.com/anime/fading-away-live-wallpaper/) | - | **Girl · Coffee** | [MoeWalls](https://moewalls.com/anime/chill-afternoon-girl-live-wallpaper/) | - |
 | **Girl · Pillow** | [MoeWalls](https://moewalls.com/anime/lazy-afternoon-girl-live-wallpaper/) | Itim | **Man · Bicycle** | [MoeWalls](https://moewalls.com/landscape/traveling-with-the-bicycle-live-wallpaper/) | Itim |
