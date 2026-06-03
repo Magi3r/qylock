@@ -1,5 +1,5 @@
 {
-  description = "SDDM Themes with NixOS module (Terraria example)";
+  description = "qylock SDDM Themes as NixOS module";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,10 +16,14 @@
     # 🔧 Package output
     packages.x86_64-linux = {
       terraria-theme = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/terraria {};
+      genshin-theme = nixpkgs.legacyPackages.x86_64-linux.callPackage ./pkgs/genshin {};
     };
 
     # 🧩 NixOS module
-    nixosModules.default = import ./modules/terraria.nix;
+    nixosModules.default = import [
+      ./modules/terraria.nix
+      ./modules/genshin.nix
+    ];
 
     # Optional: dev shell
     devShells.x86_64-linux.default = pkgs.mkShell {
